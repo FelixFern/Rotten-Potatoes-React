@@ -1,15 +1,17 @@
 import logo_kentang from '../img/potato.png';
-import poster from '../img/poster-test.jpg'
 
-function Movie() {
+import 'font-awesome/css/font-awesome.min.css';
+
+function Movie(props) {
     return (
         <div className="card">
-            <img src={poster} alt="" className="poster"></img>
+            <img src={props.poster_url} alt="" className="poster"></img>
             <div className="rating">
                 <img src={logo_kentang} alt=""></img>
-                <p>20</p>
+                <p>{props.rating}</p>
+                <a ><i className="fa fa-heart" id="wishlist_button"></i></a>
             </div>
-            <h2>Star wars</h2>    
+            <h2>{props.title}</h2>
         </div>
     )
 }

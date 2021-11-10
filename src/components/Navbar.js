@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <div>
             <nav>
-                <div class="nav-container">
+                <div className="nav-container">
                     <a href="#"><img src={logo} alt=""></img></a>
                     <input type="text" name="search-movie" className="search-bar" id="search-bar" placeholder="Search Movie, TV Show, or Series"></input>
                     <ul className="nav-list">
