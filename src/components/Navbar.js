@@ -1,20 +1,23 @@
 import logo from '../img/logo-white.png';
 import 'font-awesome/css/font-awesome.min.css';
 
-const Navbar = () => {
+import { Link, useLocation } from 'react-router-dom'
+import { useState } from 'react'
+
+function Navbar() {
+    const [current, setCurrent] = useState("home")
+    const location = useLocation()
     return (
-        <div>
-            <nav>
-                <div className="nav-container">
-                    <a href="#"><img src={logo} alt=""></img></a>
-                    <input type="text" name="search-movie" className="search-bar" id="search-bar" placeholder="Search Movie, TV Show, or Series"></input>
-                    <ul className="nav-list">
-                        <li><a href="#" id="current">Movie</a></li>
-                        <li><a href="#">Wishlist<i className="fa fa-heart"></i></a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+        <nav>
+            <div className="nav-container">
+                <a href="#"><img src={logo} alt=""></img></a>
+                <input type="text" name="search-movie" className="search-bar" id="search-bar" placeholder="Search Movie, TV Show, or Series"></input>
+                <ul className="nav-list">
+                    <li><Link to="/" id={!location.pathname.includes('wishlist') ? "current" : ""}>Movie</Link></li>
+                    <li><Link to="/wishlist"  id={location.pathname.includes('wishlist') ? "current" : ""}>Wishlist<i className="fa fa-heart"></i></Link></li>
+                </ul>
+            </div>
+        </nav>
     )
 }
 
