@@ -9,7 +9,7 @@ function Movie(props) {
             <div className="rating">
                 <img src={logo_kentang} alt=""></img>
                 <p>{props.rating}</p>
-                <a ><i className="fa fa-heart" id="wishlist_button"></i></a>
+                <a onClick><i className="fa fa-heart" id="wishlist_button"></i></a>
             </div>
             <h2>{props.title}</h2>
         </div>
