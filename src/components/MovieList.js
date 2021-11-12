@@ -1,7 +1,9 @@
-import Movie from "../components/Movie"
+import { useState, useEffect } from "react"; 
+import Movie from '../components/Movie';
+import '../App.css'
 
 import axios from "axios";
-import { useState } from "react"; 
+
 
 
 function MovieList() {
@@ -11,30 +13,36 @@ function MovieList() {
     const IMG_URL = 'https://image.tmdb.org/t/p/w500';
     const SEARCH_URL = BASE_URL + '/search/movie?'+ API_KEY;
 
-    const movie_list = []
+    const [wishlist, setWishList] = useState([]);
+    const [movieList, setMovie] = useState([]);
 
-    const [wishlist, addWishList] = useState([]);
-    const fetchData = () => {
-        return axios.get(API_URL)
-            .then((response) => getData(response.data.results));
-    }
+    useEffect(() => {
+        axios.get(API_URL).then(res => {
+            console.log(res.data.results)
+            setMovie(res.data.results)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }, [])
 
-    function getData(data){
-        data.forEach(movie => {
-            movie_list.push({title : movie.title, rating : movie.vote_average})
-        });
-    }
-
-    fetchData()
-    console.log(movie_list)
     return (
         <div className="movie-container" id="movie-container">
-            {
-            movie_list.map((movie) => 
-                <Movie
-                    title = {movie.title}
-                ></Movie>
-            )}
+            {movieList.map((movie) => {
+                const {title, id, poster_path, vote_average} = movie;
+                console.log(title);
+                function percentage(rating) {
+                    const percent = rating * 10
+                    return percent.toString() + "%"
+                }
+                return (
+                    <Movie
+                        rating = {percentage(vote_average)}
+                        title = {title}
+                        poster_url = {IMG_URL + poster_path}
+                    ></Movie>
+                )
+            })}
         </div>
     )
 }
