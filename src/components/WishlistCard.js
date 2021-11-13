@@ -1,10 +1,11 @@
 import { useContext } from 'react'
 import { wishListContext } from '../contexts/global-states'
+import '../style/wishlist.css'
 
 function WishlistCard(props) {
     const {wishlistList, setWishlist} = useContext(wishListContext)
     return (
-        <div className="card">
+        <div className="card wishlist">
             <img src={props.poster_url} alt="" className="poster"></img>
             <div className="rating">
             <i onClick={
