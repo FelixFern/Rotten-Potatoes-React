@@ -10,7 +10,7 @@ function Navbar() {
     return (
         <nav>
             <div className="nav-container">
-                <a href="#"><img src={logo} alt=""></img></a>
+                <Link to="/"><img src={logo} alt=""></img></Link>
                 <input type="text" name="search-movie" className="search-bar" id="search-bar" placeholder="Search Movie, TV Show, or Series"></input>
                 <ul className="nav-list">
                     <li><Link to="/" id={!location.pathname.includes('wishlist') ? "current" : ""}>Movie</Link></li>

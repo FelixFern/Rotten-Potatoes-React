@@ -16,7 +16,15 @@ body {
   padding: 0;
   background-color: white;
 }
-
+body::-webkit-scrollbar {
+  width: 4px;
+}
+body::-webkit-scrollbar-track {
+  background: white;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--brown-1);
+}
 /* Navigation Bar */
 nav {
   background-color: var(--brown-2);
