@@ -5,8 +5,7 @@ import { useContext } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
 
 
-function Movie(props) {
-    
+function MovieCard(props) {
     const {wishlistList, setWishlist} = useContext(wishListContext)
     return (
         <div className="card">
@@ -15,11 +14,13 @@ function Movie(props) {
                 <img src={logo_kentang} alt=""></img>
                 <p>{props.rating}</p>
                 <a><i onClick={
-                    () => setWishlist(wishlistList => [...wishlistList, {title : props.title, poster_url : props.poster_url}])} className="fa fa-heart" id="wishlist_button"></i></a>
+                    () => {
+                        setWishlist(wishlistList => [...wishlistList, {title : props.title, poster_url : props.poster_url}])
+                    }} className="fa fa-heart" id="wishlist_button"></i></a>
             </div>
             <h2>{props.title}</h2>
         </div>
     )
 }
 
-export default Movie
+export default MovieCard

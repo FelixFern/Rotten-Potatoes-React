@@ -1,6 +1,7 @@
 import {useContext, useEffect} from "react"
 import { wishListContext} from "../contexts/global-states"
 import Header from "../components/Header"
+import WishlistList from "../components/WishlistList"
 
 function Wishlist() {
     useEffect(() => {
@@ -12,6 +13,7 @@ function Wishlist() {
     return (
         <div className="content">
             <Header title="Wishlist"></Header>
+            <WishlistList></WishlistList>
         </div>
     )
 }

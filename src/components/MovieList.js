@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"; 
-import Movie from '../components/Movie';
+import MovieCard from './MovieCard';
 import '../App.css'
 
 import axios from "axios";
@@ -23,7 +23,7 @@ function MovieList() {
     }, [])
 
     return (
-        <div className="movie-container" id="movie-container">
+        <div >
             {movieList.map((movie) => {
                 const {title, id, poster_path, vote_average} = movie;
                 function percentage(rating) {
@@ -31,11 +31,11 @@ function MovieList() {
                     return percent.toString() + "%"
                 }
                 return (
-                    <Movie
+                    <MovieCard
                         rating = {percentage(vote_average)}
                         title = {title}
                         poster_url = {IMG_URL + poster_path}
-                    ></Movie>
+                    ></MovieCard>
                 )
             })}
         </div>
