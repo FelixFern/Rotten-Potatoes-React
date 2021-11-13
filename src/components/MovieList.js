@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"; 
+import { useState, useEffect, useContext } from "react"; 
 import MovieCard from './MovieCard';
 import '../App.css'
 
@@ -12,18 +12,18 @@ function MovieList() {
     const SEARCH_URL = BASE_URL + '/search/movie?'+ API_KEY;
 
     const [movieList, setMovie] = useState([]);
+    const [search, setSearch] = useState(API_URL)
 
     useEffect(() => {
-        axios.get(API_URL).then(res => {
+        axios.get(search).then(res => {
             setMovie(res.data.results)
         })
         .catch(err => {
             console.log(err)
         })
     }, [])
-
     return (
-        <div >
+        <div>
             {movieList.map((movie) => {
                 const {title, id, poster_path, vote_average} = movie;
                 function percentage(rating) {

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {wishListContext} from '../contexts/global-states'
+import { wishListContext } from '../contexts/global-states'
 import WishlistCard from './WishlistCard';
 
 function WishlistList() {
