@@ -13,11 +13,16 @@ function MovieCard(props) {
             <div className="rating">
                 <img src={logo_kentang} alt=""></img>
                 <p>{props.rating}</p>
-                <a><i onClick={
+                <i onClick={
                     () => {
-                        setWishlist(wishlistList => [...wishlistList, {title : props.title, poster_url : props.poster_url}]);
-                        alert(props.title + ' added to wishlist')
-                    }} className="fa fa-heart" id="wishlist_button"></i></a>
+                        const wishlistListCopy = wishlistList;
+                        var matchedIndex = wishlistListCopy.map(function (obj) { return obj.title; }).indexOf(props.title);
+                        if (matchedIndex == -1) {
+                            setWishlist(wishlistList => [...wishlistList, {title : props.title, poster_url : props.poster_url}]);
+                        } else {
+                            alert(props.title + " is already in your wishlist")
+                        }
+                    }} className="fa fa-heart" id="wishlist_button"></i>
             </div>
             <h2>{props.title}</h2>
         </div>
