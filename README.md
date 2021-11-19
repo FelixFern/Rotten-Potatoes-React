@@ -1,3 +1,4 @@
+![Logo](src/img/logo-white.png)
 # Rotten Potatoes - React 
 
 sebuah website yang menampilkan list dari film-film dengan menggunakan API dari https://www.themoviedb.org yang dibangun dengan menggunakan React JS dengan fitur utama wishlist.
@@ -8,6 +9,16 @@ Data yang ditampilkan oleh Website berupa :
 - Sinopsis
 - Rating
 - Release Date
+
+Fitur-fitur yang tersedia pada website ini : 
+- Wishlist 
+- Grid View
+- Modal Movie
+
+## Tampilan Website 
+![Tampilan-1](tampilan/image-1.png)
+![Tampilan-2](tampilan/image-2.png)
+![Tampilan-3](tampilan/image-3.png)
 
 ## Available Scripts
 
