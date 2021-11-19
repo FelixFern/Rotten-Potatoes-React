@@ -14,6 +14,7 @@ Fitur-fitur yang tersedia pada website ini :
 - Wishlist 
 - Grid View
 - Modal Movie
+- Search Bar (W.I.P)
 
 ## Tampilan Website 
 ![Tampilan-1](tampilan/tampilan-1.png)
