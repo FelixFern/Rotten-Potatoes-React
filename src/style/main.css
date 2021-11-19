@@ -107,10 +107,17 @@
   .card .poster:hover {
     opacity: .8;
   }
-  #popup {
+  .display-block {
+    display: block;
+  }
+  .display-none {
     display: none;
+  }
+  #popup {
+    z-index: 99;
     position: fixed;
-    margin-top: -20vh;
+    margin-top: -25vh;
+    margin-left: -15vw;
     background-color: rgba(0, 0, 0, 0.8);
     height: 110vh;
     width: 100vw;

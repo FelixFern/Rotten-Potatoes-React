@@ -1,15 +1,26 @@
 import logo_kentang from '../img/potato.png';
 
-import { wishListContext } from '../contexts/global-states';
+import { wishListContext, modalContext } from '../contexts/global-states';
 import { useContext } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
 
 
 function MovieCard(props) {
     const {wishlistList, setWishlist} = useContext(wishListContext)
+    const {modalToggle, setToggle} = useContext(modalContext)
     return (
         <div className="card">
-            <img src={props.poster_url} alt="" className="poster"></img>
+            <img onClick={() => {
+                setToggle({
+                    title: props.title, 
+                    overview: props.overview,
+                    rating: props.rating,
+                    poster_url: props.poster_url,
+                    language: props.language,
+                    release_date: props.release_date,
+                    show: true
+                })
+            }} src={props.poster_url} alt="" className="poster"></img>
             <div className="rating">
                 <img src={logo_kentang} alt=""></img>
                 <p>{props.rating}</p>

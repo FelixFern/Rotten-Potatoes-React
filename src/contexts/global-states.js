@@ -1,4 +1,4 @@
 import { createContext } from 'react';
 
 export const wishListContext = createContext({})
-export const movieContext = createContext({})
+export const modalContext = createContext({})

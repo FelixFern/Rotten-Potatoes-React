@@ -2,7 +2,7 @@ import './App.css';
 import './style/main.css'
 import './style/wishlist.css'
 
-import { wishListContext } from './contexts/global-states';
+import { wishListContext, modalContext } from './contexts/global-states';
 
 import Navbar from './components/Navbar';
 
@@ -18,17 +18,19 @@ import {
 
 function App() {
     const [wishlistList, setWishlist] = useState([])
-
+    const [modalToggle, setToggle] = useState([])
     return (
-        <wishListContext.Provider value={{ wishlistList, setWishlist}}>
-            <Router>
-                <Navbar></Navbar>
-                <Routes>
-                    <Route path="/" element={<Main />} />
-                    <Route path="/wishlist" element={<Wishlist />} />
-                </Routes>
-            </Router>
-        </wishListContext.Provider>
+        <modalContext.Provider value={{ modalToggle, setToggle }}>
+            <wishListContext.Provider value={{ wishlistList, setWishlist}}>
+                <Router>
+                    <Navbar></Navbar>
+                    <Routes>
+                        <Route path="/" element={<Main />} />
+                        <Route path="/wishlist" element={<Wishlist />} />
+                    </Routes>
+                </Router>
+            </wishListContext.Provider>
+        </modalContext.Provider>
     );
 }
 

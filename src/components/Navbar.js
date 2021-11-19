@@ -2,10 +2,8 @@ import logo from '../img/logo-white.png';
 import 'font-awesome/css/font-awesome.min.css';
 
 import { Link, useLocation } from 'react-router-dom'
-import { useState } from 'react'
 
 function Navbar() {
-    const [current, setCurrent] = useState("home")
     const location = useLocation()
     return (
         <nav>

@@ -3,6 +3,8 @@ import MovieCard from './MovieCard';
 import '../App.css'
 
 import axios from "axios";
+import MovieModal from "./MovieModal";
+import { modalContext } from "../contexts/global-states";
 
 function MovieList() {
     const API_KEY = 'api_key=4a2f5c42b8d2cf6178787473ff9d8970';
@@ -13,6 +15,7 @@ function MovieList() {
 
     const [movieList, setMovie] = useState([]);
     const [search, setSearch] = useState(API_URL)
+    const {modalToggle, setToggle} = useContext(modalContext)
 
     useEffect(() => {
         axios.get(search).then(res => {
@@ -25,7 +28,7 @@ function MovieList() {
     return (
         <div>
             {movieList.map((movie) => {
-                const {title, id, poster_path, vote_average} = movie;
+                const {title, poster_path, vote_average, overview, original_language, release_date} = movie;
                 function percentage(rating) {
                     const percent = rating * 10
                     return percent.toString() + "%"
@@ -35,9 +38,21 @@ function MovieList() {
                         rating = {percentage(vote_average)}
                         title = {title}
                         poster_url = {IMG_URL + poster_path}
+                        overview = {overview}
+                        language = {original_language}
+                        release_date = {release_date}
                     ></MovieCard>
                 )
             })}
+            <MovieModal
+                rating = {modalToggle.rating}
+                title = {modalToggle.title}
+                poster_url = {modalToggle.poster_url}
+                overview = {modalToggle.overview}
+                language = {modalToggle.language}
+                release_date = {modalToggle.release_date}
+                show = {modalToggle.show}
+            ></MovieModal>
         </div>
     )
 }
