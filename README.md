@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Rotten Potatoes - React 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+sebuah website yang menampilkan list dari film-film dengan menggunakan API dari https://www.themoviedb.org yang dibangun dengan menggunakan React JS dengan fitur utama wishlist.
+
+Data yang ditampilkan oleh Website berupa :
+- Poster Film
+- Judul Film
+- Sinopsis
+- Rating
+- Release Date
 
 ## Available Scripts
 
