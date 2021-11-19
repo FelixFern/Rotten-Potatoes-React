@@ -16,9 +16,9 @@ Fitur-fitur yang tersedia pada website ini :
 - Modal Movie
 
 ## Tampilan Website 
-![Tampilan-1](tampilan/image-1.png)
-![Tampilan-2](tampilan/image-2.png)
-![Tampilan-3](tampilan/image-3.png)
+![Tampilan-1](tampilan/tampilan-1.png)
+![Tampilan-2](tampilan/tampilan-2.png)
+![Tampilan-3](tampilan/tampilan-3.png)
 
 ## Available Scripts
 
